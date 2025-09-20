@@ -5,9 +5,5 @@ __pycache__/
 # Virtual environment
 venv/
 
-# Logs and reports (optional)
-Logs/
-Reports/
-
 # Environment variables
 .env
