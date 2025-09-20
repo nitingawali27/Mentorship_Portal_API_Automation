@@ -1,79 +1,75 @@
-# Playwright API Automation Project
+# Mentorship_Portal_API_Automation
 
-## Project Overview
-This project is designed to automate API testing using **Python**, **Playwright**, and **pytest**.  
-It supports **GET**, **POST**, **PUT**, and **DELETE** requests, with **common verification functions** and **logging**.
+## Overview
+This repository contains automated API test cases for the **Mentorship Program Portal**.  
+It uses **Python**, **Playwright**, and **pytest** to validate various API endpoints, including employee search, welcome messages, and employee details.
+
+---
+
+## Features
+- API client setup for reusable requests  
+- Test scripts for GET endpoints:
+  - Welcome message
+  - Employee search
+  - Employee details
+- Verification utilities for:
+  - HTTP status codes
+  - JSON key existence
+  - Response content
+- Logging and reporting for test execution  
+- Variables and configuration files for easy maintenance
 
 ---
 
 ## Project Structure
 
-Playwright_Automation/
+Mentorship_Portal_API_Automation/
 │
-├── Utilities/
-│ ├── api_client.py # Handles GET, POST, PUT, DELETE requests
-│ ├── api_url.py # Stores all API endpoints
-│ ├── payload.py # Stores payloads for POST and PUT requests
-│ ├── common_verifications.py # Common assertion functions
-│ └── logger.py # Logger configuration
-│
-├── Tests/
-│ ├── test_CURD.py # CRUD API tests
-│ └── test_GET.py # GET API tests
-│
-├── Reports/ # HTML test reports (generated)
-├── Logs/ # Log files (generated)
-├── requirements.txt # Python dependencies
-└── README.md
+├─ Tests/ # Test scripts
+├─ Utilities/ # Helper modules (API client, logger, verifications, variables)
+├─ Reports/ # Test execution reports
+├─ Logs/ # Log files
+├─ venv/ # Python virtual environment (ignored in git)
+├─ requirements.txt # Project dependencies
+├─ README.md # Project documentation
+└─ .gitignore # Git ignore file
 
----
+--
 
-## Prerequisites
+## Setup
 
-- Python 3.12+
-- Virtual environment (`venv`)
-- Installed packages:
+1. Clone the repository:
+git clone https://github.com/nitingawali27/Mentorship_Portal_API_Automation.git
+Navigate to project folder:
 
-```bash
+
+cd Mentorship_Portal_API_Automation
+Create and activate virtual environment:
+
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+Install dependencies:
+
 pip install -r requirements.txt
-Playwright browsers installed:
-
-
-playwright install
 Running Tests
-Run all tests with verbose output:
+Run all tests:
 
 
-pytest -v
-Generate HTML report:
+pytest
+Run a specific test file:
 
 
-pytest --html=Reports/API_Test_Report.html
-Features
-API Client for GET, POST, PUT, DELETE requests
-
-Common verifications: status code, headers, JSON key validation, JSON schema
-
-Payloads and URLs stored separately for maintainability
-
-Automatic logging of requests and responses
-
-HTML reports with timestamped filenames
-
-Logging
-Logs are saved in Logs/ folder with date-time format:
-API_Test_Log_YYYY-MM-DD_HH-MM-SS.log
-
-Console output also includes logging information.
+pytest Tests/test_mentorship.py
+Test reports will be generated in the Reports/ folder.
 
 Notes
-Ensure your virtual environment is activated before running tests
+Make sure to keep the venv/ folder ignored in Git.
+Logs are stored in the Logs/ folder for debugging.
 
-API key and headers are stored in Utilities/api_client.py for reuse
-
-Modify payload.py for different POST/PUT test data
+Variables like firstname, lastname, and employeeCode are maintained in Utilities/variables.py for easy updates.
 
 Author
 Nitin Gawali
-Senior QA Engineer
-
