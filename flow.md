@@ -13,17 +13,17 @@ flowchart TD
     E --> F[Create Playwright request context]
     F --> G[Initialize APIClient with default headers]
 
-    G --> H1[GET /message (welcome_url)]
-    G --> H2[GET /search_employee (search_employee_url)]
-    G --> H3[GET /employee_details/{employeecode} (employee_details_url)]
+    G --> H1["GET /message (welcome_url)"]
+    G --> H2["GET /search_employee (search_employee_url)"]
+    G --> H3["GET /employee_details/{employeecode} (employee_details_url)"]
 
-    H1 --> I1[verify_http_status_code(response, 200)]
-    I1 --> I2[verify_response_key(message...)]
-    H2 --> J1[verify_http_status_code(response, 200)]
-    J1 --> J2[find employee by firstname, lastname, employeecode]
-    H3 --> K1[verify_http_status_code(response, 200)]
-    K1 --> K2[verify employeeCode not null]
-    K2 --> K3[verify response contains firstname, lastname, employeecode]
+    H1 --> I1["verify_http_status_code(response, 200)"]
+    I1 --> I2["verify_response_key(message...)"]
+    H2 --> J1["verify_http_status_code(response, 200)"]
+    J1 --> J2["find employee by firstname, lastname, employeecode"]
+    H3 --> K1["verify_http_status_code(response, 200)"]
+    K1 --> K2["verify employeeCode not null"]
+    K2 --> K3["verify response contains firstname, lastname, employeecode"]
 
     I2 --> L[pytest-html report saved to Reports/]
     J2 --> L
